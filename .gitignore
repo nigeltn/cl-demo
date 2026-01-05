@@ -1,0 +1,29 @@
+# --- Python & Runtime ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Virtual Environments ---
+venv/
+env/
+.env
+.venv/
+anaconda3/
+
+# --- Project Specific (Don't push these!) ---
+# Data: Never push datasets (they are large and downloadable)
+data/
+
+# Logs: Don't push your experimental outputs (unless you want one for demo)
+logs/
+*.log
+
+# --- IDEs & Editors ---
+# VS Code
+.vscode/
+# PyCharm
+.idea/
+
+# --- OS Specific ---
+# Mac (Annoying hidden files)
+.DS_Store
