@@ -44,7 +44,7 @@ def main():
             f"  📊 Task {task_id} Results: {['{:.2f}'.format(x) for x in accuracies]}"
         )
 
-    logger.save(vars(cfg))
+    logger.save(cfg)
 
 
 if __name__ == "__main__":
