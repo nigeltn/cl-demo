@@ -8,6 +8,7 @@ training:
   batch_size: 64
   lr: 0.001
   epochs_per_task: 5
+  input_dim: 3072
   hidden_dim: 400
 
 ewc:

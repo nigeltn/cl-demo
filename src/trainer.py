@@ -10,7 +10,9 @@ class Trainer:
         self.config = config
         self.device = device
 
-        self.model = MLP(hidden_dim=config.training.hidden_dim).to(device)
+        self.model = MLP(
+            input_dim=config.training.input_dim, hidden_dim=config.training.hidden_dim
+        ).to(device)
         self.optimizer = optim.Adam(self.model.parameters(), lr=config.training.lr)
         self.criterion = torch.nn.CrossEntropyLoss()
 
@@ -66,7 +68,13 @@ class Trainer:
     def consolidate(self, dataloader, task_classes):
         print(f"  🔒 Consolidating weights for classes {task_classes}...")
 
-        new_ewc = EWC(self.model, dataloader, task_classes, self.config.ewc.num_samples, self.device)
+        new_ewc = EWC(
+            self.model,
+            dataloader,
+            task_classes,
+            self.config.ewc.num_samples,
+            self.device,
+        )
         self.ewc_list.append(new_ewc)
 
     def evaluate(self, dataset, tasks):
