@@ -42,7 +42,8 @@ class EWC:
 
                 masked_logits = logits[:, self.task_classes]
                 mapped_labels = torch.tensor(
-                    [self.class_map[x.item()] for x in current_label], device=self.device
+                    [self.class_map[x.item()] for x in current_label],
+                    device=self.device,
                 )
 
                 loss = F.cross_entropy(masked_logits, mapped_labels)
