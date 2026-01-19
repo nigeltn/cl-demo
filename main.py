@@ -66,7 +66,8 @@ def main():
         # Train
         for epoch in range(args.epochs):
             loss = strategy.train_epoch(train_loader, task_id=task_idx)
-            print(f"   Epoch {epoch+1}/{args.epochs} | Loss: {loss:.4f}")
+            if epoch % 5 == 0:
+                print(f"   Epoch {epoch+1}/{args.epochs} | Loss: {loss:.4f}")
 
         # Consolidate
         strategy.on_task_complete(train_loader, task_id=task_idx)
