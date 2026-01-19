@@ -4,6 +4,7 @@ import argparse
 from datetime import datetime
 from types import SimpleNamespace
 
+
 class ExperimentLogger:
     def __init__(self, log_dir, experiment_name):
         self.log_dir = log_dir
