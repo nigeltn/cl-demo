@@ -7,7 +7,7 @@ This project investigates the robustness of [**REMIND**](https://arxiv.org/abs/1
 
 **The Hypothesis:** Latent Replay methods depend heavily on the stability of the feature extractor to generate valid memory indices.  
 
-**The Finding:** In scratch-training scenarios (Split-CIFAR10), REMIND suffers from a **"Cold Start" failure mode**, barely outperforming Naive baselines and underperforming simple regularization methods (EWC). This occurs because the Product Quantizer (PQ) effectively compresses "noise" from the immature feature extractor.  
+**The Finding:** In scratch-training scenarios (Split-CIFAR10), REMIND suffers from a **"Cold Start" failure mode**, barely outperforming Naive baselines and underperforming simple regularization methods like [**EWC**](https://doi.org/10.1073/pnas.1611835114) (Kirkpatrick et al., 2017). This occurs because the Product Quantizer (PQ) effectively compresses "noise" from the immature feature extractor.
 
 **The Validation:** Performance is recovered only when the backbone is initialized with mature features (ImageNet) and input resolution is corrected to match the pre-training architecture.
 
